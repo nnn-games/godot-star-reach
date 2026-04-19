@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/tetris/tetris.gd" id="1_script"]
+
+[node name="Tetris" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 500.0
+offset_top = 140.0
+offset_right = 760.0
+offset_bottom = 260.0
+theme_override_font_sizes/font_size = 20
+text = "SCORE: 0
+LINES: 0
+LEVEL: 0"
+
+[node name="NextLabel" type="Label" parent="."]
+offset_left = 360.0
+offset_top = 50.0
+offset_right = 500.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 18
+text = "NEXT"
+
+[node name="GameOverLabel" type="Label" parent="."]
+offset_left = 60.0
+offset_top = 260.0
+offset_right = 320.0
+offset_bottom = 340.0
+theme_override_font_sizes/font_size = 28
+text = "GAME OVER
+Press R to restart"
+horizontal_alignment = 1
+visible = false

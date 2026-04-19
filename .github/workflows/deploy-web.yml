@@ -1,0 +1,102 @@
+name: Deploy Web Build to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  GODOT_VERSION: "4.6.2"
+  GODOT_STATUS: "stable"
+  PROJECT_DIR: "star-reach"
+  EXPORT_PRESET: "Web"
+  # 배포할 메인 씬. StarReach 본편 준비되면 이 값만 바꾸면 됨.
+  TARGET_SCENE: "res://scenes/tetris/tetris.tscn"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache Godot binary + export templates
+        id: cache-godot
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/bin/godot
+            ~/.local/share/godot/export_templates
+          key: godot-${{ env.GODOT_VERSION }}-${{ env.GODOT_STATUS }}-linux
+
+      - name: Install Godot binary
+        if: steps.cache-godot.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.local/bin"
+          cd /tmp
+          ZIP="Godot_v${GODOT_VERSION}-${GODOT_STATUS}_linux.x86_64.zip"
+          wget -q "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-${GODOT_STATUS}/${ZIP}"
+          unzip -q "${ZIP}"
+          mv "Godot_v${GODOT_VERSION}-${GODOT_STATUS}_linux.x86_64" "$HOME/.local/bin/godot"
+          chmod +x "$HOME/.local/bin/godot"
+
+      - name: Install export templates
+        if: steps.cache-godot.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          cd /tmp
+          TPZ="Godot_v${GODOT_VERSION}-${GODOT_STATUS}_export_templates.tpz"
+          wget -q "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-${GODOT_STATUS}/${TPZ}"
+          unzip -q "${TPZ}"
+          DEST="$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.${GODOT_STATUS}"
+          mkdir -p "$(dirname "${DEST}")"
+          mv templates "${DEST}"
+
+      - name: Add Godot to PATH
+        run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Swap main_scene
+        working-directory: ${{ env.PROJECT_DIR }}
+        run: |
+          sed -i 's|run/main_scene="[^"]*"|run/main_scene="${{ env.TARGET_SCENE }}"|' project.godot
+          grep 'run/main_scene' project.godot
+
+      - name: Import project
+        working-directory: ${{ env.PROJECT_DIR }}
+        run: godot --headless --quit
+
+      - name: Export Web build
+        working-directory: ${{ env.PROJECT_DIR }}
+        run: |
+          set -euo pipefail
+          mkdir -p build/web
+          godot --headless --export-release "${EXPORT_PRESET}" build/web/index.html
+          test -f build/web/index.html
+          test -f build/web/index.wasm
+          test -f build/web/index.pck
+          ls -la build/web/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.PROJECT_DIR }}/build/web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
