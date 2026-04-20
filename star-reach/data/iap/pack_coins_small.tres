@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="IAPProduct" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/iap_product.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+sku = &"pack_coins_small"
+kind = 0
+display_name = "Small Coin Pack"
+description = "1,000 coins"
+fallback_price = "$0.99"
+grants = {
+"currency": { "coin": 1000.0 }
+}

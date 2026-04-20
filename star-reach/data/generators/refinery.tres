@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="GeneratorDef" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/generator_def.gd" id="1_def"]
+[ext_resource type="Script" path="res://scripts/resources/exponential_cost.gd" id="2_cost"]
+
+[sub_resource type="Resource" id="Cost_refinery"]
+script = ExtResource("2_cost")
+base = 100.0
+growth = 1.2
+
+[resource]
+script = ExtResource("1_def")
+id = &"refinery"
+display_name = "Refinery"
+description = "Processes raw ore into coins at higher throughput."
+currency_id = &"coin"
+base_rate = 5.0
+cost_currency_id = &"coin"
+cost_curve = SubResource("Cost_refinery")

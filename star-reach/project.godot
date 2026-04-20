@@ -11,9 +11,39 @@ config_version=5
 [application]
 
 config/name="StarReach"
-run/main_scene="uid://dgoww372hvl1l"
+run/main_scene="res://scenes/splash/splash.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.06, 0.08, 0.18, 1)
+boot_splash/show_image=true
+boot_splash/minimum_display_time=500
+
+[autoload]
+
+EventBus="*res://scripts/autoload/event_bus.gd"
+GameState="*res://scripts/autoload/game_state.gd"
+TimeManager="*res://scripts/autoload/time_manager.gd"
+IAPService="*res://scripts/autoload/iap_service.gd"
+
+[android]
+
+gradle_build/use_gradle_build=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GodotGooglePlayBilling/plugin.cfg")
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[gui]
+
+theme/default_theme_scale=1.5
 
 [input]
 

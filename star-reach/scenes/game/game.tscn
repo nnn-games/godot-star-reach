@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/game/panels/generator_panel.tscn" id="2_gen"]
+[ext_resource type="PackedScene" path="res://scenes/game/panels/upgrade_panel.tscn" id="3_upg"]
+[ext_resource type="PackedScene" path="res://scenes/game/panels/stats_panel.tscn" id="4_stats"]
+[ext_resource type="PackedScene" path="res://scenes/game/panels/prestige_panel.tscn" id="5_prestige"]
+[ext_resource type="PackedScene" path="res://scenes/game/panels/shop_panel.tscn" id="6_shop"]
+[ext_resource type="PackedScene" path="res://scenes/common/currency_counter.tscn" id="7_currency"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.1, 0.22, 1)
+
+[node name="Root" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TopBar" type="HBoxContainer" parent="Root"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+theme_override_constants/separation = 8
+
+[node name="BackButton" type="Button" parent="Root/TopBar"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(72, 48)
+text = "<"
+
+[node name="CurrencyCounter" parent="Root/TopBar" instance=ExtResource("7_currency")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TopBarSpacer" type="Control" parent="Root/TopBar"]
+layout_mode = 2
+custom_minimum_size = Vector2(72, 0)
+
+[node name="TabContainer" type="TabContainer" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tab_alignment = 1
+
+[node name="Generators" parent="Root/TabContainer" instance=ExtResource("2_gen")]
+layout_mode = 2
+
+[node name="Upgrades" parent="Root/TabContainer" instance=ExtResource("3_upg")]
+layout_mode = 2
+
+[node name="Stats" parent="Root/TabContainer" instance=ExtResource("4_stats")]
+layout_mode = 2
+
+[node name="Prestige" parent="Root/TabContainer" instance=ExtResource("5_prestige")]
+layout_mode = 2
+
+[node name="Shop" parent="Root/TabContainer" instance=ExtResource("6_shop")]
+layout_mode = 2
+
+[node name="ModalLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+layer = 10
