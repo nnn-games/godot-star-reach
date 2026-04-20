@@ -36,6 +36,64 @@ func tick(delta: float) -> void:
 		_add_currency(def.currency_id, produced)
 		EventBus.generator_ticked.emit(def.id, produced)
 
+## Bulk time advance for offline progress. Same math as tick() but does not
+## emit per-generator tick signals (would flood observers for 8h of deltas).
+## Currency changes still emit once-per-currency via _add_currency.
+## Returns totals by generator id for summary UI.
+func advance_simulation(dt: float) -> Dictionary:
+	var totals: Dictionary[StringName, float] = {}
+	if dt <= 0.0:
+		return totals
+	for def in generator_defs:
+		var level: int = _generator_levels.get(def.id, 0)
+		if level <= 0:
+			continue
+		var produced: float = def.base_rate * float(level) * dt
+		_add_currency(def.currency_id, produced)
+		totals[def.id] = produced
+	return totals
+
+## Serialize full mutable state for SaveSystem. Keep keys stable across versions.
+func to_dict() -> Dictionary:
+	return {
+		"balances": _dict_stringname_to_string(_balances),
+		"generator_levels": _dict_stringname_to_string(_generator_levels),
+		"flags": _dict_stringname_to_string(_flags),
+	}
+
+## Restore from a Dictionary produced by to_dict (or an older migrated version).
+## Defaults to seeded state for any missing key, then overlays saved values.
+## Emits currency_changed / generator_purchased so UI rebinds automatically.
+func from_dict(d: Dictionary) -> void:
+	_balances.clear()
+	_generator_levels.clear()
+	_flags.clear()
+	for c in currency_defs:
+		_balances[c.id] = c.initial_amount
+	for g in generator_defs:
+		_generator_levels[g.id] = 0
+	var saved_balances: Dictionary = d.get("balances", {})
+	for k in saved_balances:
+		_balances[StringName(k)] = float(saved_balances[k])
+	var saved_levels: Dictionary = d.get("generator_levels", {})
+	for k in saved_levels:
+		_generator_levels[StringName(k)] = int(saved_levels[k])
+	var saved_flags: Dictionary = d.get("flags", {})
+	for k in saved_flags:
+		_flags[StringName(k)] = bool(saved_flags[k])
+	for c_id in _balances:
+		EventBus.currency_changed.emit(c_id, _balances[c_id])
+	for g_id in _generator_levels:
+		EventBus.generator_purchased.emit(g_id, _generator_levels[g_id])
+
+## StringName keys don't survive JSON round-trip (JSON only has string keys).
+## Normalize to plain String on save; StringName on load.
+static func _dict_stringname_to_string(src: Dictionary) -> Dictionary:
+	var out: Dictionary = {}
+	for k in src:
+		out[String(k)] = src[k]
+	return out
+
 func get_currency(id: StringName) -> float:
 	return _balances.get(id, 0.0)
 

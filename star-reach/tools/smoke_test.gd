@@ -27,6 +27,7 @@ const SCENES: PackedStringArray = [
 	"res://scenes/game/panels/shop_row.tscn",
 	"res://scenes/common/confirm_dialog.tscn",
 	"res://scenes/common/currency_counter.tscn",
+	"res://scenes/common/offline_summary_dialog.tscn",
 ]
 
 const SCRIPTS: PackedStringArray = [
@@ -34,6 +35,7 @@ const SCRIPTS: PackedStringArray = [
 	"res://scripts/autoload/game_state.gd",
 	"res://scripts/autoload/time_manager.gd",
 	"res://scripts/autoload/iap_service.gd",
+	"res://scripts/autoload/save_system.gd",
 	"res://scripts/resources/cost_curve.gd",
 	"res://scripts/resources/exponential_cost.gd",
 	"res://scripts/resources/currency_def.gd",

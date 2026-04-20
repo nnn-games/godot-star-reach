@@ -24,6 +24,7 @@ EventBus="*res://scripts/autoload/event_bus.gd"
 GameState="*res://scripts/autoload/game_state.gd"
 TimeManager="*res://scripts/autoload/time_manager.gd"
 IAPService="*res://scripts/autoload/iap_service.gd"
+SaveSystem="*res://scripts/autoload/save_system.gd"
 
 [android]
 
