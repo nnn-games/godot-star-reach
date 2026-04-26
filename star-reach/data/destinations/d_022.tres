@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Destination" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/destination.gd" id="1_dest"]
+
+[resource]
+script = ExtResource("1_dest")
+id = "D_022"
+display_name = "Deimos"
+tier = 3
+region_id = "REGION_INNER_SOLAR"
+required_stages = 7
+reward_credit = 78
+reward_tech_level = 32
+required_tech_level = 275

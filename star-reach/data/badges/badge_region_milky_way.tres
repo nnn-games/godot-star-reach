@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BadgeDef" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/badge_def.gd" id="1_badge"]
+
+[resource]
+script = ExtResource("1_badge")
+id = "BADGE_REGION_MILKY_WAY"
+display_name = "Galactic Cartographer"
+badge_type = "region_first"
+region_id = "REGION_MILKY_WAY"
+threshold = 0
+achievement_id = "ach_first_milky"

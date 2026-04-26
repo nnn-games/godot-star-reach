@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SkyProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/sky_profile.gd" id="1_sky"]
+
+[resource]
+script = ExtResource("1_sky")
+profile_id = "zone_02_lunar_neo"
+region_id = "REGION_LUNAR_NEO"
+sky_color = Color(0.05, 0.06, 0.12, 1)

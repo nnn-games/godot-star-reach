@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CodexEntry" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/codex_entry.gd" id="1_codex"]
+
+[resource]
+script = ExtResource("1_codex")
+id = "BODY_PLUTO"
+display_name = "Pluto System"
+summary = "Pluto, Charon, and the small moons at the edge of the classical solar system."
+destination_ids = Array[String](["D_071", "D_072", "D_073", "D_074", "D_075"])

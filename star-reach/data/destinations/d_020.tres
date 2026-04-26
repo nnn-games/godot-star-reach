@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Destination" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/destination.gd" id="1_dest"]
+
+[resource]
+script = ExtResource("1_dest")
+id = "D_020"
+display_name = "Asteroid Bennu"
+tier = 2
+region_id = "REGION_LUNAR_NEO"
+required_stages = 6
+reward_credit = 62
+reward_tech_level = 27
+required_tech_level = 218

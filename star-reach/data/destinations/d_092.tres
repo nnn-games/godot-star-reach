@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Destination" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/destination.gd" id="1_dest"]
+
+[resource]
+script = ExtResource("1_dest")
+id = "D_092"
+display_name = "Horsehead Nebula"
+tier = 5
+region_id = "REGION_MILKY_WAY"
+required_stages = 10
+reward_credit = 1120
+reward_tech_level = 183
+required_tech_level = 7059

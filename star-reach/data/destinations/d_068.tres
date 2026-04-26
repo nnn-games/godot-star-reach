@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Destination" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/destination.gd" id="1_dest"]
+
+[resource]
+script = ExtResource("1_dest")
+id = "D_068"
+display_name = "Triton"
+tier = 4
+region_id = "REGION_ICE_GIANTS"
+required_stages = 9
+reward_credit = 645
+reward_tech_level = 120
+required_tech_level = 3456

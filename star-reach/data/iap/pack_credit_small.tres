@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IAPProduct" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/iap_product.gd" id="1_iap"]
+
+[resource]
+script = ExtResource("1_iap")
+sku = &"pack_credit_small"
+kind = 0
+display_name = "IAP_PACK_CREDIT_SMALL_NAME"
+description = "IAP_PACK_CREDIT_SMALL_DESC"
+fallback_price = "$0.99"
+steam_dlc_app_id = 0
+grants = {
+"credit": 500
+}

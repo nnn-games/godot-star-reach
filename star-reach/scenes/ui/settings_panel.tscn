@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/settings_panel.gd" id="1_panel"]
+
+[node name="SettingsPanel" type="PopupPanel"]
+size = Vector2i(520, 560)
+script = ExtResource("1_panel")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 496.0
+offset_bottom = 536.0
+theme_override_constants/separation = 18
+
+[node name="TitleLabel" type="Label" parent="VBox"]
+layout_mode = 2
+text = "SETTINGS_TITLE"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 32
+
+[node name="SfxRow" type="VBoxContainer" parent="VBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="SfxHeader" type="HBoxContainer" parent="VBox/SfxRow"]
+layout_mode = 2
+
+[node name="SfxLabel" type="Label" parent="VBox/SfxRow/SfxHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SETTINGS_SFX_VOLUME"
+theme_override_font_sizes/font_size = 20
+
+[node name="SfxValueLabel" type="Label" parent="VBox/SfxRow/SfxHeader"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="SfxSlider" type="HSlider" parent="VBox/SfxRow"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 28)
+max_value = 100.0
+value = 100.0
+
+[node name="BgmRow" type="VBoxContainer" parent="VBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="BgmHeader" type="HBoxContainer" parent="VBox/BgmRow"]
+layout_mode = 2
+
+[node name="BgmLabel" type="Label" parent="VBox/BgmRow/BgmHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SETTINGS_BGM_VOLUME"
+theme_override_font_sizes/font_size = 20
+
+[node name="BgmValueLabel" type="Label" parent="VBox/BgmRow/BgmHeader"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="BgmSlider" type="HSlider" parent="VBox/BgmRow"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 28)
+max_value = 100.0
+value = 100.0
+
+[node name="LanguageRow" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="LanguageLabel" type="Label" parent="VBox/LanguageRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SETTINGS_LANGUAGE"
+theme_override_font_sizes/font_size = 20
+
+[node name="LanguageOption" type="OptionButton" parent="VBox/LanguageRow"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(180, 40)
+
+[node name="Spacer" type="Control" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BackToMenuButton" type="Button" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(220, 52)
+size_flags_horizontal = 4
+text = "SETTINGS_BACK_TO_MENU"
+theme_override_font_sizes/font_size = 18
+
+[node name="CloseButton" type="Button" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(200, 56)
+size_flags_horizontal = 4
+text = "BTN_CLOSE"
+theme_override_font_sizes/font_size = 20

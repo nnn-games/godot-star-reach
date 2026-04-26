@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="LaunchBalanceConfig" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/launch_balance_config.gd" id="1_lbc"]
+[ext_resource type="Script" path="res://scripts/resources/tier_segment.gd" id="2_seg"]
+
+[sub_resource type="Resource" id="Tier_1"]
+script = ExtResource("2_seg")
+tier = 1
+stage_min = 1
+stage_max = 4
+base_chance = 0.5
+max_chance = 0.85
+
+[sub_resource type="Resource" id="Tier_2"]
+script = ExtResource("2_seg")
+tier = 2
+stage_min = 5
+stage_max = 6
+base_chance = 0.44
+max_chance = 0.78
+
+[sub_resource type="Resource" id="Tier_3"]
+script = ExtResource("2_seg")
+tier = 3
+stage_min = 7
+stage_max = 8
+base_chance = 0.36
+max_chance = 0.72
+
+[sub_resource type="Resource" id="Tier_4"]
+script = ExtResource("2_seg")
+tier = 4
+stage_min = 9
+stage_max = 9
+base_chance = 0.28
+max_chance = 0.66
+
+[sub_resource type="Resource" id="Tier_5"]
+script = ExtResource("2_seg")
+tier = 5
+stage_min = 10
+stage_max = 10
+base_chance = 0.22
+max_chance = 0.6
+
+[resource]
+script = ExtResource("1_lbc")
+tier_segments = Array[Resource]([SubResource("Tier_1"), SubResource("Tier_2"), SubResource("Tier_3"), SubResource("Tier_4"), SubResource("Tier_5")])

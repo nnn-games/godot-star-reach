@@ -1,0 +1,122 @@
+keys,ko,en
+APP_TITLE,StarReach,StarReach
+BTN_CONTINUE,계속,Continue
+BTN_CANCEL,취소,Cancel
+BTN_CLOSE,닫기,Close
+MENU_PLAY,플레이,Play
+MENU_NEW_GAME,새 게임,New Game
+MENU_SETTINGS,설정,Settings
+MENU_QUIT,종료,Quit
+CONFIRM_NEW_GAME_TITLE,새 게임을 시작할까요?,Start a new game?
+CONFIRM_NEW_GAME_BODY,"현재 저장 데이터(XP·크레딧·기술 레벨·코덱스·뱃지 등)가 모두 초기화됩니다.
+되돌릴 수 없습니다.","This will erase your current save (XP, Credit, Tech Level, Codex, Badges, etc).
+This cannot be undone."
+CONFIRM_NEW_GAME_OK,새 게임 시작,New Game
+LAUNCH_BUTTON,발사,LAUNCH
+AUTO_LAUNCH_TOGGLE,자동 발사,Auto Launch
+AUTO_LAUNCH_TOGGLE_BOOSTED_FMT,자동 발사 ★  (%d일 %d시간 남음),Auto Launch ★  (%dd %dh left)
+AUTO_LAUNCH_TOGGLE_BOOSTED_SHORT_FMT,자동 발사 ★  (%d시간 남음),Auto Launch ★  (%dh left)
+FLOAT_XP_FMT,+%d XP,+%d XP
+FLOAT_CREDIT_FMT,+%d 크레딧,+%d Credit
+FLOAT_TECH_FMT,+%d 기술,+%d Tech
+RESULT_META_FMT,티어 %d  ·  %d단계,Tier %d  ·  %d stages
+RESULT_REWARDS_HEADER,획득 보상,Rewards earned
+RESULT_UNLOCKS_HEADER,새로 해금,Newly unlocked
+RESULT_NEXT_HEADER,다음 목적지,Next destination
+RESULT_NEXT_END,시즌 최종 목적지,Final destination
+RESULT_NEXT_LOCKED_FMT,기술 Lv %d 필요,Requires Tech Lv %d
+RESULT_CONTINUE_NEXT,다음 →,Next →
+RESULT_CONTINUE_END,확인,Continue
+RESULT_UNIT_XP,XP,XP
+RESULT_UNIT_CREDIT,크레딧,Credit
+RESULT_UNIT_TECH,기술 Lv,Tech Lv
+RESULT_UNLOCK_CODEX,코덱스,Codex
+RESULT_UNLOCK_BADGE,뱃지,Badge
+BACK_BUTTON,메뉴로 돌아가기,Back to Menu
+SETTINGS_BUTTON,설정,Settings
+TOP_XP_FMT,XP: %d,XP: %d
+TOP_CREDIT_FMT,크레딧: %d,Credit: %d
+TOP_TECH_FMT,기술 Lv: %d,Tech Lv: %d
+DEST_LABEL_FMT,"%s — %s (T%d, %d단계)","%s — %s (T%d, %d stages)"
+STAGE_PASS_FMT,스테이지 %d: %.1f%%  →  성공,Stage %d: %.1f%%  →  PASS
+STAGE_FAIL_FMT,스테이지 %d: %.1f%%  →  실패,Stage %d: %.1f%%  →  FAIL
+DEST_CLEARED_FMT,%s 돌파!,%s cleared!
+SETTINGS_TITLE,설정,Settings
+SETTINGS_SFX_VOLUME,효과음 볼륨,SFX Volume
+SETTINGS_BGM_VOLUME,배경음 볼륨,BGM Volume
+SETTINGS_LANGUAGE,언어,Language
+SETTINGS_BACK_TO_MENU,메뉴로 나가기,Back to Menu
+RESULT_TITLE_DEFAULT,도착지 돌파!,DESTINATION CLEARED!
+RESULT_MILESTONE_FMT,★ 이정표: %s ★,★ MILESTONE: %s ★
+RESULT_TIER_STAGES_FMT,티어 %d  ·  %d단계,Tier %d  ·  %d stages
+RESULT_REWARD_FMT,+%d 크레딧   +%d 기술 Lv,+%d Credit   +%d Tech Lv
+RESULT_SESSION_XP_FMT,세션 XP 획득: +%d,Session XP earned: +%d
+ABORT_TITLE,⚠ 시스템 과부하,⚠ SYSTEM OVERLOAD
+ABORT_DETAIL,이륙 전에 발사가 중단되었습니다.,Launch aborted before liftoff.
+ABORT_COST_FMT,−%d 크레딧 (수리비),−%d Credit (repair)
+ABORT_NO_COST,크레딧 부족 — 수리비 면제,No credit available — repair waived
+ABORT_RETRY,재시도,Try Again
+ABORT_SHIELD_FMT,실드 (%d),Shield (%d)
+ABORT_SHIELD_EMPTY,실드 없음,No shields
+ABORT_WATCH_AD,광고 보기,Watch Ad
+ABORT_AD_PLAYING,광고 재생 중…,Playing ad…
+ABORT_AD_NOT_READY,광고 준비 중,Ad not ready
+IAP_SHIELD_STACK_5_NAME,실드 팩 ×5,Shield Pack ×5
+IAP_SHIELD_STACK_5_DESC,스트레스 어보트 방지용 T3 실드 5개.,5× T3 shields to bypass stress aborts.
+OFFLINE_TITLE,다시 오신 것을 환영합니다!,Welcome back!
+OFFLINE_TIME_FMT,오프라인: %d시간 %d분,Offline: %dh %dm
+OFFLINE_CAPPED_SUFFIX,  (8시간 상한 적용),  (capped at 8h)
+OFFLINE_DEST_FMT,도착지: %s,Destination: %s
+OFFLINE_LAUNCHES_FMT,시뮬레이션 발사 %d회  (성공 %d회),Auto-launches simulated: %d  (wins %d)
+OFFLINE_REWARD_FMT,+%d XP   +%d 크레딧   +%d 기술 Lv,+%d XP   +%d Credit   +%d Tech Lv
+CODEX_BUTTON,코덱스,Codex
+BADGES_BUTTON,뱃지,Badges
+MISSIONS_BUTTON,미션,Missions
+PANEL_CODEX_TITLE,천체 코덱스,Celestial Codex
+PANEL_BADGES_TITLE,뱃지,Badges
+PANEL_MISSIONS_TITLE,일일 미션,Daily Missions
+PANEL_CODEX_PROGRESS_FMT,해금: %d / %d,Unlocked: %d / %d
+PANEL_BADGES_PROGRESS_FMT,획득: %d / %d,Earned: %d / %d
+PANEL_MISSIONS_PROGRESS_FMT,완료: %d / %d,Claimed: %d / %d
+ENTRY_LOCKED,???,???
+CODEX_LOCKED_SUMMARY,미지의 영역 — 첫 돌파로 해금,Unknown region — unlocked on first arrival
+CODEX_PROGRESS_FMT,진행 %d / %d,Progress %d / %d
+BADGE_LOCKED,미획득,Not earned
+BADGE_WIN_FMT,%d승 달성,%d wins milestone
+BADGE_REGION_FMT,지역 첫 돌파,First region clear
+MISSION_CLAIMED,완료,Claimed
+MISSION_DAILY_CAP_FMT,일일 기술 Lv 보상 %d / %d,Daily Tech reward %d / %d
+SHOP_BUTTON,상점,Shop
+PANEL_SHOP_TITLE,상점,Shop
+SHOP_BUY,구매,Buy
+SHOP_OWNED,구매 완료,Owned
+SHOP_RESTORE,복원,Restore
+SHOP_PURCHASE_SUCCESS_FMT,%s 구매 완료!,Purchased: %s
+SHOP_PURCHASE_FAILED_FMT,구매 실패: %s,Purchase failed: %s
+SHOP_BACKEND_NOT_READY,상점 연결 중…,Store connecting…
+IAP_PACK_CREDIT_SMALL_NAME,소형 크레딧 팩,Small Credit Pack
+IAP_PACK_CREDIT_SMALL_DESC,크레딧 500 즉시 획득.,Instantly gain 500 Credit.
+IAP_STARTER_PACK_NAME,스타터 팩,Starter Pack
+IAP_STARTER_PACK_DESC,크레딧 2000 + 기술 Lv 20. 계정당 1회.,2000 Credit + 20 Tech Lv. One-time purchase.
+IAP_REMOVE_ADS_NAME,광고 제거,Remove Ads
+IAP_REMOVE_ADS_DESC,전체 광고를 영구 제거합니다.,Permanently remove all ads.
+IAP_AUTO_LAUNCH_PASS_7D_NAME,자동 발사 패스 (7일),Auto Launch Pass (7-day)
+IAP_AUTO_LAUNCH_PASS_7D_DESC,7일간 자동 발사 속도 상한이 상승.,7 days of increased auto-launch rate cap.
+IAP_BATTLE_PASS_PREMIUM_S1_NAME,시즌 1 프리미엄 패스,Season 1 Premium Pass
+IAP_BATTLE_PASS_PREMIUM_S1_DESC,시즌 1 모든 프리미엄 보상 해금.,Unlocks all premium rewards for Season 1.
+BP_BUTTON,패스,Pass
+PANEL_BP_TITLE,배틀 패스,Battle Pass
+BP_SEASON_01_NAME,시즌 1: 대기권 탈출,Season 1: Atmospheric Breakout
+BP_PROGRESS_FMT,누적 XP %d  ·  현재 티어 %d / %d,XP %d  ·  Tier %d / %d
+BP_PREMIUM_ACTIVE,프리미엄 해금됨,Premium unlocked
+BP_PREMIUM_LOCKED,프리미엄 미해금 — 상점에서 구매,Premium locked — unlock in Shop
+BP_TIER_FMT,티어 %d  (필요 XP %d),Tier %d  (req %d XP)
+BP_FREE_TRACK,무료,Free
+BP_PREMIUM_TRACK,프리미엄,Premium
+BP_CLAIM,수령,Claim
+BP_CLAIMED,수령 완료,Claimed
+BP_LOCKED_XP,XP 부족,Need XP
+BP_LOCKED_PREMIUM,프리미엄 전용,Premium only
+BP_REWARD_CREDIT_FMT,크레딧 %d,%d Credit
+BP_REWARD_TECH_FMT,기술 Lv %d,%d Tech Lv
+BP_REWARD_BOOST_FMT,%s %d일,%s %dd

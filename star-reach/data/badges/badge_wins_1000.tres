@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BadgeDef" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/badge_def.gd" id="1_badge"]
+
+[resource]
+script = ExtResource("1_badge")
+id = "BADGE_WINS_1000"
+display_name = "Stellar Architect"
+badge_type = "win_count"
+region_id = ""
+threshold = 1000
+achievement_id = "ach_wins_1000"

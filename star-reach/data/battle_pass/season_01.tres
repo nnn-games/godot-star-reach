@@ -1,0 +1,80 @@
+[gd_resource type="Resource" script_class="BattlePassSeasonDef" load_steps=13 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/battle_pass_season.gd" id="1_season"]
+[ext_resource type="Script" path="res://scripts/resources/battle_pass_tier.gd" id="2_tier"]
+
+[sub_resource type="Resource" id="t01"]
+script = ExtResource("2_tier")
+tier = 1
+xp_required = 50
+free_reward = {"credit": 50}
+premium_reward = {"credit": 100}
+
+[sub_resource type="Resource" id="t02"]
+script = ExtResource("2_tier")
+tier = 2
+xp_required = 120
+free_reward = {"credit": 80}
+premium_reward = {"credit": 150, "tech_level": 2}
+
+[sub_resource type="Resource" id="t03"]
+script = ExtResource("2_tier")
+tier = 3
+xp_required = 220
+free_reward = {"credit": 120}
+premium_reward = {"credit": 200, "boosts": {"AUTO_LAUNCH_PASS": 86400}}
+
+[sub_resource type="Resource" id="t04"]
+script = ExtResource("2_tier")
+tier = 4
+xp_required = 360
+free_reward = {"tech_level": 3}
+premium_reward = {"credit": 300, "tech_level": 5}
+
+[sub_resource type="Resource" id="t05"]
+script = ExtResource("2_tier")
+tier = 5
+xp_required = 540
+free_reward = {"credit": 200}
+premium_reward = {"credit": 400, "tech_level": 5}
+
+[sub_resource type="Resource" id="t06"]
+script = ExtResource("2_tier")
+tier = 6
+xp_required = 770
+free_reward = {"credit": 300}
+premium_reward = {"credit": 500, "boosts": {"AUTO_LAUNCH_PASS": 259200}}
+
+[sub_resource type="Resource" id="t07"]
+script = ExtResource("2_tier")
+tier = 7
+xp_required = 1050
+free_reward = {"tech_level": 5}
+premium_reward = {"credit": 600, "tech_level": 10}
+
+[sub_resource type="Resource" id="t08"]
+script = ExtResource("2_tier")
+tier = 8
+xp_required = 1380
+free_reward = {"credit": 400}
+premium_reward = {"credit": 800, "tech_level": 10}
+
+[sub_resource type="Resource" id="t09"]
+script = ExtResource("2_tier")
+tier = 9
+xp_required = 1760
+free_reward = {"credit": 500}
+premium_reward = {"credit": 1000, "tech_level": 15}
+
+[sub_resource type="Resource" id="t10"]
+script = ExtResource("2_tier")
+tier = 10
+xp_required = 2200
+free_reward = {"credit": 750, "tech_level": 10}
+premium_reward = {"credit": 1500, "tech_level": 25, "boosts": {"AUTO_LAUNCH_PASS": 604800}}
+
+[resource]
+script = ExtResource("1_season")
+id = "S1"
+display_name = "BP_SEASON_01_NAME"
+tiers = Array[ExtResource("2_tier")]([SubResource("t01"), SubResource("t02"), SubResource("t03"), SubResource("t04"), SubResource("t05"), SubResource("t06"), SubResource("t07"), SubResource("t08"), SubResource("t09"), SubResource("t10")])

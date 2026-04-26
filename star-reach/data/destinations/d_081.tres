@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Destination" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/destination.gd" id="1_dest"]
+
+[resource]
+script = ExtResource("1_dest")
+id = "D_081"
+display_name = "Heliopause Crossing"
+tier = 5
+region_id = "REGION_INTERSTELLAR"
+required_stages = 10
+reward_credit = 900
+reward_tech_level = 155
+required_tech_level = 5215

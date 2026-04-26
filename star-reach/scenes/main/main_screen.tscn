@@ -1,0 +1,287 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="Script" path="res://scenes/main/main_screen.gd" id="1_screen"]
+[ext_resource type="Script" path="res://scripts/services/launch_service.gd" id="2_launch"]
+[ext_resource type="Script" path="res://scripts/services/stress_service.gd" id="3_stress"]
+[ext_resource type="PackedScene" path="res://scenes/main/sky_layer.tscn" id="4_sky_scene"]
+[ext_resource type="Script" path="res://scripts/services/sky_profile_applier.gd" id="5_sky_apply"]
+[ext_resource type="Script" path="res://scripts/util/screen_shake.gd" id="6_shake"]
+[ext_resource type="PackedScene" path="res://scenes/ui/flash_overlay.tscn" id="7_flash"]
+[ext_resource type="Script" path="res://scripts/services/auto_launch_service.gd" id="8_auto"]
+[ext_resource type="Script" path="res://scripts/services/offline_progress_service.gd" id="9_offline"]
+[ext_resource type="Script" path="res://scripts/services/discovery_service.gd" id="10_disc"]
+[ext_resource type="Script" path="res://scripts/services/badge_service.gd" id="11_badge"]
+[ext_resource type="Script" path="res://scripts/services/mission_service.gd" id="12_mission"]
+[ext_resource type="Script" path="res://scripts/services/battle_pass_service.gd" id="13_bp"]
+[ext_resource type="Script" path="res://scenes/ui/rocket_track.gd" id="14_track"]
+[ext_resource type="PackedScene" path="res://scenes/ui/currency_pill.tscn" id="15_pill"]
+
+[node name="MainScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_screen")
+
+[node name="SkyLayer" parent="." instance=ExtResource("4_sky_scene")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LaunchService" type="Node" parent="."]
+script = ExtResource("2_launch")
+
+[node name="StressService" type="Node" parent="."]
+script = ExtResource("3_stress")
+
+[node name="SkyProfileApplier" type="Node" parent="."]
+script = ExtResource("5_sky_apply")
+
+[node name="ScreenShake" type="Node" parent="."]
+script = ExtResource("6_shake")
+
+[node name="AutoLaunchService" type="Node" parent="."]
+script = ExtResource("8_auto")
+
+[node name="OfflineProgressService" type="Node" parent="."]
+script = ExtResource("9_offline")
+
+[node name="DiscoveryService" type="Node" parent="."]
+script = ExtResource("10_disc")
+
+[node name="BadgeService" type="Node" parent="."]
+script = ExtResource("11_badge")
+
+[node name="MissionService" type="Node" parent="."]
+script = ExtResource("12_mission")
+
+[node name="BattlePassService" type="Node" parent="."]
+script = ExtResource("13_bp")
+
+[node name="ModalLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="FlashOverlay" parent="ModalLayer" instance=ExtResource("7_flash")]
+unique_name_in_owner = true
+
+[node name="RocketTrack" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("14_track")
+
+[node name="TopHUD" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -80.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="XPPill" parent="TopHUD" instance=ExtResource("15_pill")]
+unique_name_in_owner = true
+layout_mode = 2
+icon_color = Color(0.424, 0.788, 0.961, 1)
+
+[node name="CreditPill" parent="TopHUD" instance=ExtResource("15_pill")]
+unique_name_in_owner = true
+layout_mode = 2
+icon_color = Color(0.941, 0.725, 0.369, 1)
+
+[node name="TechPill" parent="TopHUD" instance=ExtResource("15_pill")]
+unique_name_in_owner = true
+layout_mode = 2
+icon_color = Color(0.756, 0.56, 0.93, 1)
+
+[node name="SettingsButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 60.0
+grow_horizontal = 0
+text = "SETTINGS_BUTTON"
+theme_override_font_sizes/font_size = 12
+
+[node name="DestinationLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 32.0
+offset_top = 76.0
+offset_right = -32.0
+offset_bottom = 108.0
+grow_horizontal = 2
+text = ""
+horizontal_alignment = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.95)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
+
+[node name="StressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -160.0
+offset_right = -12.0
+offset_bottom = 160.0
+grow_horizontal = 0
+grow_vertical = 2
+max_value = 100.0
+value = 0.0
+visible = false
+show_percentage = false
+fill_mode = 3
+
+[node name="ResultLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -268.0
+offset_right = -16.0
+offset_bottom = -228.0
+grow_horizontal = 2
+grow_vertical = 0
+text = ""
+horizontal_alignment = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.95)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+
+[node name="ActionArea" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -200.0
+offset_right = -16.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="LaunchButton" type="Button" parent="ActionArea"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(320, 72)
+size_flags_horizontal = 4
+text = "LAUNCH_BUTTON"
+theme_override_font_sizes/font_size = 28
+
+[node name="AutoLaunchToggle" type="CheckButton" parent="ActionArea"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "AUTO_LAUNCH_TOGGLE"
+visible = false
+
+[node name="BottomTabBar" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -64.0
+offset_right = -16.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 6
+
+[node name="CodexButton" type="Button" parent="BottomTabBar"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 44)
+text = "CODEX_BUTTON"
+theme_override_font_sizes/font_size = 12
+
+[node name="BadgesButton" type="Button" parent="BottomTabBar"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 44)
+text = "BADGES_BUTTON"
+theme_override_font_sizes/font_size = 12
+
+[node name="MissionsButton" type="Button" parent="BottomTabBar"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 44)
+text = "MISSIONS_BUTTON"
+theme_override_font_sizes/font_size = 12
+
+[node name="BattlePassButton" type="Button" parent="BottomTabBar"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 44)
+text = "BP_BUTTON"
+theme_override_font_sizes/font_size = 12
+
+[node name="ShopButton" type="Button" parent="BottomTabBar"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(0, 44)
+text = "SHOP_BUTTON"
+theme_override_font_sizes/font_size = 12
+
+[node name="DebugLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+offset_left = 12.0
+offset_top = 118.0
+offset_right = 400.0
+offset_bottom = 132.0
+text = ""
+horizontal_alignment = 0
+modulate = Color(1, 1, 1, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 10

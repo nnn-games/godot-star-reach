@@ -1,0 +1,13 @@
+WARNING: [IAP/Steam] steamInit failed (Steam client not running?); falling back
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] initialize (res://scripts/iap/steam_backend.gd:34)
+       [1] _install_backend (res://scripts/autoload/iap_service.gd:38)
+       [2] _ready (res://scripts/autoload/iap_service.gd:30)
+WARNING: [IAP] Native backend init failed; swapping to Mock
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _on_ready_changed (res://scripts/autoload/iap_service.gd:110)
+       [1] initialize (res://scripts/iap/steam_backend.gd:35)
+       [2] _install_backend (res://scripts/autoload/iap_service.gd:38)
+       [3] _ready (res://scripts/autoload/iap_service.gd:30)

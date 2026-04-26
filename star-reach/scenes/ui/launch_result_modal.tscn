@@ -1,0 +1,122 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/launch_result_modal.gd" id="1_modal"]
+
+[node name="LaunchResultModal" type="PopupPanel"]
+size = Vector2i(640, 900)
+script = ExtResource("1_modal")
+
+[node name="Root" type="MarginContainer" parent="."]
+offset_right = 640.0
+offset_bottom = 900.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 28
+
+[node name="VBox" type="VBoxContainer" parent="Root"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="HeaderBox" type="VBoxContainer" parent="Root/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TitleLabel" type="Label" parent="Root/VBox/HeaderBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+horizontal_alignment = 1
+autowrap_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 40
+
+[node name="MetaLabel" type="Label" parent="Root/VBox/HeaderBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+horizontal_alignment = 1
+modulate = Color(0.82, 0.86, 0.98, 0.85)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.85)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 16
+
+[node name="HeaderDivider" type="HSeparator" parent="Root/VBox"]
+layout_mode = 2
+
+[node name="RewardsHeader" type="Label" parent="Root/VBox"]
+layout_mode = 2
+text = "RESULT_REWARDS_HEADER"
+horizontal_alignment = 0
+modulate = Color(0.7, 0.76, 0.92, 1)
+theme_override_font_sizes/font_size = 16
+
+[node name="RewardsList" type="VBoxContainer" parent="Root/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="UnlocksBlock" type="VBoxContainer" parent="Root/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12
+visible = false
+
+[node name="UnlocksDivider" type="HSeparator" parent="Root/VBox/UnlocksBlock"]
+layout_mode = 2
+
+[node name="UnlocksHeader" type="Label" parent="Root/VBox/UnlocksBlock"]
+layout_mode = 2
+text = "RESULT_UNLOCKS_HEADER"
+horizontal_alignment = 0
+modulate = Color(0.941, 0.725, 0.369, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.85)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 16
+
+[node name="UnlocksList" type="VBoxContainer" parent="Root/VBox/UnlocksBlock"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NextDivider" type="HSeparator" parent="Root/VBox"]
+layout_mode = 2
+
+[node name="NextBlock" type="VBoxContainer" parent="Root/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="NextHeader" type="Label" parent="Root/VBox/NextBlock"]
+layout_mode = 2
+text = "RESULT_NEXT_HEADER"
+horizontal_alignment = 0
+modulate = Color(0.7, 0.76, 0.92, 1)
+theme_override_font_sizes/font_size = 14
+
+[node name="NextLabel" type="Label" parent="Root/VBox/NextBlock"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+horizontal_alignment = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.85)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="Spacer" type="Control" parent="Root/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContinueButton" type="Button" parent="Root/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(320, 76)
+size_flags_horizontal = 4
+text = "RESULT_CONTINUE_NEXT"
+theme_override_font_sizes/font_size = 24

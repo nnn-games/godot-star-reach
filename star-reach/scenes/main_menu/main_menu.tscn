@@ -33,7 +33,7 @@ alignment = 1
 [node name="Title" type="Label" parent="VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "StarReach"
+text = "APP_TITLE"
 horizontal_alignment = 1
 theme_override_font_sizes/font_size = 64
 
@@ -46,11 +46,32 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 custom_minimum_size = Vector2(260, 72)
-text = "Play"
+text = "MENU_PLAY"
+
+[node name="NewGameButton" type="Button" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+custom_minimum_size = Vector2(260, 56)
+text = "MENU_NEW_GAME"
+
+[node name="SettingsButton" type="Button" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+custom_minimum_size = Vector2(260, 56)
+text = "MENU_SETTINGS"
 
 [node name="QuitButton" type="Button" parent="VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 custom_minimum_size = Vector2(260, 56)
-text = "Quit"
+text = "MENU_QUIT"
+
+[node name="ConfirmDialog" type="ConfirmationDialog" parent="."]
+unique_name_in_owner = true
+title = "Start a new game?"
+ok_button_text = "New Game"
+cancel_button_text = "Cancel"
+dialog_text = "Fallback — set from main_menu.gd to pick up live translations."

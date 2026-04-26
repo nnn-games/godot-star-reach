@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IAPProduct" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/iap_product.gd" id="1_iap"]
+
+[resource]
+script = ExtResource("1_iap")
+sku = &"battle_pass_premium_s1"
+kind = 1
+display_name = "IAP_BATTLE_PASS_PREMIUM_S1_NAME"
+description = "IAP_BATTLE_PASS_PREMIUM_S1_DESC"
+fallback_price = "$4.99"
+steam_dlc_app_id = 0
+grants = {
+"battle_pass_premium": true,
+"non_consumable": true
+}

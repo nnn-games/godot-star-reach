@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SkyProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/sky_profile.gd" id="1_sky"]
+
+[resource]
+script = ExtResource("1_sky")
+profile_id = "zone_03_inner_solar"
+region_id = "REGION_INNER_SOLAR"
+sky_color = Color(0.45, 0.18, 0.10, 1)

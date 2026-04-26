@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MissionDef" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/mission_def.gd" id="1_mission"]
+
+[resource]
+script = ExtResource("1_mission")
+id = "DM_FACILITY_UPGRADE_1"
+display_name = "Buy 1 facility upgrade"
+condition_id = &"facility_upgrade"
+target = 1
+reward_tech_level = 10

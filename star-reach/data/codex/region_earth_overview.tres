@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CodexEntry" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/codex_entry.gd" id="1_codex"]
+
+[resource]
+script = ExtResource("1_codex")
+id = "REGION_EARTH_OVERVIEW"
+display_name = "Earth Region"
+summary = "Earth's atmosphere and the orbits closest to home, from troposphere to geostationary."
+destination_ids = Array[String](["D_001", "D_002", "D_003", "D_004", "D_005", "D_006", "D_007", "D_008", "D_009", "D_010"])

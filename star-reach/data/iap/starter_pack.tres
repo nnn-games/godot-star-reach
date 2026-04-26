@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="IAPProduct" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/iap_product.gd" id="1_iap"]
+
+[resource]
+script = ExtResource("1_iap")
+sku = &"starter_pack"
+kind = 1
+display_name = "IAP_STARTER_PACK_NAME"
+description = "IAP_STARTER_PACK_DESC"
+fallback_price = "$2.99"
+steam_dlc_app_id = 0
+grants = {
+"credit": 2000,
+"tech_level": 20,
+"non_consumable": true
+}

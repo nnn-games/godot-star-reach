@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Destination" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/destination.gd" id="1_dest"]
+
+[resource]
+script = ExtResource("1_dest")
+id = "D_100"
+display_name = "Edge of Local Group"
+tier = 5
+region_id = "REGION_DEEP_SPACE"
+required_stages = 10
+reward_credit = 1500
+reward_tech_level = 250
+required_tech_level = 8590

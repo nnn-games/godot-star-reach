@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="IAPProduct" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://scripts/resources/iap_product.gd" id="1_script"]
+[ext_resource type="Script" path="res://scripts/resources/iap_product.gd" id="1_iap"]
 
 [resource]
-script = ExtResource("1_script")
+script = ExtResource("1_iap")
 sku = &"remove_ads"
 kind = 1
-display_name = "Remove Ads"
-description = "Permanently removes interstitial ads."
-fallback_price = "$2.99"
+display_name = "IAP_REMOVE_ADS_NAME"
+description = "IAP_REMOVE_ADS_DESC"
+fallback_price = "$1.99"
 steam_dlc_app_id = 0
 grants = {
-"flags": ["ads_removed"]
+"non_consumable": true
 }

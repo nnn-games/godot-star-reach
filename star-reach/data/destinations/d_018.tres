@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Destination" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/destination.gd" id="1_dest"]
+
+[resource]
+script = ExtResource("1_dest")
+id = "D_018"
+display_name = "James Webb Space Telescope"
+tier = 2
+region_id = "REGION_LUNAR_NEO"
+required_stages = 6
+reward_credit = 52
+reward_tech_level = 23
+required_tech_level = 170

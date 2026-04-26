@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="StressConfig" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/stress_config.gd" id="1_cfg"]
+[ext_resource type="Script" path="res://scripts/resources/tier_stress_params.gd" id="2_tp"]
+
+[sub_resource type="Resource" id="T3"]
+script = ExtResource("2_tp")
+tier = 3
+stress_per_fail = 10.0
+abort_chance = 0.4
+repair_cost = 300
+
+[sub_resource type="Resource" id="T4"]
+script = ExtResource("2_tp")
+tier = 4
+stress_per_fail = 15.0
+abort_chance = 0.5
+repair_cost = 700
+
+[sub_resource type="Resource" id="T5"]
+script = ExtResource("2_tp")
+tier = 5
+stress_per_fail = 20.0
+abort_chance = 0.6
+repair_cost = 1500
+
+[resource]
+script = ExtResource("1_cfg")
+tier_params = Array[Resource]([SubResource("T3"), SubResource("T4"), SubResource("T5")])

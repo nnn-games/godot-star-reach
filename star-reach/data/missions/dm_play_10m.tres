@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MissionDef" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/mission_def.gd" id="1_mission"]
+
+[resource]
+script = ExtResource("1_mission")
+id = "DM_PLAY_10M"
+display_name = "Play for 10 minutes"
+condition_id = &"play_minutes"
+target = 10
+reward_tech_level = 15

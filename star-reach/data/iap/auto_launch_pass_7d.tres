@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="IAPProduct" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/iap_product.gd" id="1_iap"]
+
+[resource]
+script = ExtResource("1_iap")
+sku = &"auto_launch_pass_7d"
+kind = 0
+display_name = "IAP_AUTO_LAUNCH_PASS_7D_NAME"
+description = "IAP_AUTO_LAUNCH_PASS_7D_DESC"
+fallback_price = "$1.99"
+steam_dlc_app_id = 0
+grants = {
+"boosts": {
+"AUTO_LAUNCH_PASS": 604800
+}
+}

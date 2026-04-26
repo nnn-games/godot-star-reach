@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Destination" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/destination.gd" id="1_dest"]
+
+[resource]
+script = ExtResource("1_dest")
+id = "D_072"
+display_name = "Charon"
+tier = 5
+region_id = "REGION_PLUTO_KUIPER"
+required_stages = 10
+reward_credit = 720
+reward_tech_level = 132
+required_tech_level = 3953

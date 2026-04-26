@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CodexEntry" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/codex_entry.gd" id="1_codex"]
+
+[resource]
+script = ExtResource("1_codex")
+id = "SYSTEM_ASTEROID_BELT"
+display_name = "Asteroid Belt"
+summary = "Rubble-pile worlds and the dwarf planet Ceres between Mars and Jupiter."
+destination_ids = Array[String](["D_031", "D_032", "D_033", "D_034", "D_035", "D_036", "D_037", "D_038", "D_039", "D_040"])

@@ -28,10 +28,10 @@ from pathlib import Path
 
 PROJECT_DIR: Path = Path(__file__).resolve().parents[1]
 BUILD_DIR: Path = PROJECT_DIR / "build" / "android"
-APK_PATH: Path = BUILD_DIR / "tetris-debug.apk"
+APK_PATH: Path = BUILD_DIR / "starreach-debug.apk"
 PROJECT_FILE: Path = PROJECT_DIR / "project.godot"
 EXPORT_PRESETS: Path = PROJECT_DIR / "export_presets.cfg"
-DEFAULT_SCENE: str = "res://scenes/tetris/tetris.tscn"
+DEFAULT_SCENE: str = "res://scenes/splash/splash.tscn"
 PRESET_NAME: str = "Android"
 PACKAGE_NAME: str = "com.nnngames.starreach"
 

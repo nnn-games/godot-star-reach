@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CodexEntry" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/codex_entry.gd" id="1_codex"]
+
+[resource]
+script = ExtResource("1_codex")
+id = "BODY_MARS"
+display_name = "Mars"
+summary = "The red planet, its moons, and the largest volcano in the solar system."
+destination_ids = Array[String](["D_021", "D_022", "D_023", "D_024", "D_025", "D_026"])

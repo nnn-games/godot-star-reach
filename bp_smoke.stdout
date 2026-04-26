@@ -1,0 +1,25 @@
+Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org
+
+[Locale] loaded 97 keys × 2 locales (ko, en)
+[IAP] loaded 5 products from res://data/iap/
+[IAP] Mock backend active (no native purchases)
+== Phase 6c Battle Pass smoke ==
+  ok: season loaded
+  ok: season has 10 tiers (got 10)
+  ok: current tier = 0 on fresh state
+  ok: tier 1 free NOT claimable at 49 XP
+  ok: current tier = 1 at 50 XP
+  ok: tier 1 free claimable at 50 XP
+  ok: tier 1 premium NOT claimable without premium flag
+  ok: claim tier 1 free succeeds
+  ok: tier 1 free grants 50 credit (got 50)
+  ok: tier 1 recorded in claimed_free
+  ok: tier 1 free cannot be re-claimed
+  ok: tier 1 premium claimable after unlock
+  ok: claim tier 1 premium succeeds
+  ok: tier 1 premium adds 100 credit (got 150)
+  ok: tier 3 premium claimable at 220 XP
+  ok: claim tier 3 premium succeeds
+  ok: tier 3 premium grants ~1-day AUTO_LAUNCH_PASS (expire=1777130482 now=1777044082)
+  ok: battle_pass_premium_s1 sets premium_unlocked flag
+PASSED

@@ -31,7 +31,7 @@ BUILD_DIR: Path = PROJECT_DIR / "build" / "web"
 OUTPUT_HTML: Path = BUILD_DIR / "index.html"
 PROJECT_FILE: Path = PROJECT_DIR / "project.godot"
 EXPORT_PRESETS: Path = PROJECT_DIR / "export_presets.cfg"
-DEFAULT_SCENE: str = "res://scenes/tetris/tetris.tscn"
+DEFAULT_SCENE: str = "res://scenes/splash/splash.tscn"
 PRESET_NAME: str = "Web"
 
 GODOT_BIN: str = os.environ.get(

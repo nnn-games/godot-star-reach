@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CodexEntry" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/codex_entry.gd" id="1_codex"]
+
+[resource]
+script = ExtResource("1_codex")
+id = "BODY_MOON"
+display_name = "Moon"
+summary = "Earth's natural satellite — landing sites, near-side seas, and the far side."
+destination_ids = Array[String](["D_013", "D_014", "D_015", "D_016"])

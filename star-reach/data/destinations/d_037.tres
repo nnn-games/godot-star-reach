@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Destination" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/destination.gd" id="1_dest"]
+
+[resource]
+script = ExtResource("1_dest")
+id = "D_037"
+display_name = "4 Vesta"
+tier = 3
+region_id = "REGION_ASTEROID_BELT"
+required_stages = 8
+reward_credit = 198
+reward_tech_level = 50
+required_tech_level = 934

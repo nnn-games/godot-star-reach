@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CodexEntry" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/codex_entry.gd" id="1_codex"]
+
+[resource]
+script = ExtResource("1_codex")
+id = "BODY_EUROPA"
+display_name = "Europa"
+summary = "Ice-shelled Galilean moon hiding a global subsurface ocean."
+destination_ids = Array[String](["D_047", "D_048", "D_049", "D_050"])

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SkyProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/sky_profile.gd" id="1_sky"]
+
+[resource]
+script = ExtResource("1_sky")
+profile_id = "zone_04_asteroid_belt"
+region_id = "REGION_ASTEROID_BELT"
+sky_color = Color(0.18, 0.16, 0.14, 1)

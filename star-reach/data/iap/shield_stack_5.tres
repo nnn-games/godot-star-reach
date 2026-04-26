@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="IAPProduct" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/iap_product.gd" id="1_iap"]
+
+[resource]
+script = ExtResource("1_iap")
+sku = &"shield_stack_5"
+kind = 0
+display_name = "IAP_SHIELD_STACK_5_NAME"
+description = "IAP_SHIELD_STACK_5_DESC"
+fallback_price = "$0.99"
+steam_dlc_app_id = 0
+grants = {
+"shields": {
+"T3": 5
+}
+}
